@@ -1,0 +1,79 @@
+<div class="container">
+    @if(mealDetails()?.idMeal) {
+    <div class="selectedCountry">
+        @if(isFlagAvailable()) {
+        <img [src]="'countries/' + mealDetails()?.strArea + '.png'" alt="bandeira">
+        <span style="font-size: 16px; color: black;">
+            >
+        </span>
+        }
+        <p class="manrope-default" style="font-weight: 400; font-size: 13px;">
+            {{mealDetails()?.strCategory}}
+        </p>
+        <span style="font-size: 16px; color: black;">
+            >
+        </span>
+        <p class="manrope-default" style="font-weight: 400; font-size: 13px;">
+            {{mealDetails()?.strMeal}}
+        </p>
+        <span (click)="backToHome()" style="font-size: 16px; color: black;">
+            &#x2715;
+        </span>
+
+    </div>
+    <span>
+        <p>You choose</p>
+        {{mealDetails()?.strMeal}}
+    </span>
+
+    <div class="imgContainer">
+        <div class="favoriteContainer" (click)="toggleFavoriteMeal($event)">
+            <img [src]="'mealItem/' + (isFavorite ? 'starColor.png' : 'star.png') " alt="estrela">
+        </div>
+        <img [src]="mealDetails()?.strMealThumb" [alt]="mealDetails()?.strMeal">
+    </div>
+    <span>
+        <p>Category</p>
+        {{mealDetails()?.strCategory}}
+    </span>
+    <details>
+        <summary>
+            <span>Ingredients</span>
+        </summary>
+        <article>
+            <ul>
+                @for(item of getIngredients(mealDetails()); track item) {
+                <li>{{item}}</li>
+                }
+            </ul>
+        </article>
+    </details>
+
+    <details>
+        <summary>
+            <span>Instructions</span>
+        </summary>
+        <article>
+            <pre>
+                    {{mealDetails()?.strInstructions}}
+                </pre>
+        </article>
+    </details>
+
+    <details>
+        <summary>
+            <span>Video</span>
+        </summary>
+        <article>
+            <iframe width="100%" height="600px" [src]="(mealDetails()?.strYoutube) | safePipe " title="video do yt"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" is="x-frame-bypass" allowfullscreen>
+            </iframe>
+        </article>
+    </details>
+
+    } @else {
+    <p>loading meal...</p>
+    }
+</div>

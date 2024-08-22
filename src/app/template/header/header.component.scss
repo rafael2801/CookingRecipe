@@ -1,0 +1,72 @@
+:host {
+    grid-area: header;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    grid-area: header;
+}
+
+.container {
+    width: 100%;
+    padding: 0 5%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerActions {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.headerActions h3 {
+    white-space: nowrap;
+}
+
+.headerActions button {
+    width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 23px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px) { 
+    .container {
+        flex-direction: column;
+        padding: 5% 0;
+        height: 100%;
+        gap: 20px;
+    }
+
+    :host {
+        background-color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    .headerActions {
+        background-color: #F5F5F5;
+        height: 45px;
+        width: 80%;
+        padding: 0 5%;
+        justify-content: space-between;
+    }
+
+    .headerActions > button {
+        height: 25px;
+        width: 100px;
+        font-size: 14px;
+    }
+}

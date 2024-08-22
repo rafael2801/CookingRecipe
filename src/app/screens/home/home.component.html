@@ -1,0 +1,36 @@
+
+<section>
+        <div class="container">
+            <span>
+                <p>Hi,</p>
+                Search for your country
+            </span>
+            <div class="customInput">
+                <img src="lupa.png" alt="lupa para pesquisa">
+                <input [(ngModel)]="searchCountries" type="text" placeholder="Search for Lunch">
+            </div>
+            <span>or choose</span>
+            <div class="scroller">
+                <div class="imgsList">
+                    @for(item of filteredCountries(); track item) {
+                    <div class="imgContainer">
+                        <img (click)="selectItem(item)" [src]="'countries/' + item + '.png'"
+                            [alt]="'bandeira do pais ' + item">
+                    </div>
+                    }
+                </div>
+            </div>
+            <span>Dessert</span>
+            @if(mealReducer) {
+                <div class="scroller">
+                    <div class="imgsList">
+                        @for(item of mealReducer.desserts; track item) {
+                        <div (click)="chooseMeal(item.idMeal)">
+                            <img [src]="item.strMealThumb" [alt]="item.strMeal">
+                        </div>
+                        }
+                    </div>
+                </div>
+            } @else { <p>loading dessert...</p> }
+        </div>
+</section>

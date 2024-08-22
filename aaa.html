@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+.scroller {
+    height: 200px;
+  width: 400px;
+  overflow: auto;
+  background: grey;
+}
+
+.big-thing {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scroller::-webkit-scrollbar {
+  width: 7px;
+}
+.scroller::-webkit-scrollbar-track-piece {
+  background: rgb(216, 216, 216);
+  border-radius: 10px;
+}
+.scroller::-webkit-scrollbar-thumb {
+  background: rgb(81, 37, 64);
+  border-radius: 10px;
+}
+.scroller::-webkit-scrollbar-button:end:decrement {
+  height: 25%;
+  display: block;
+  background: transparent;
+
+}
+.scroller::-webkit-scrollbar-button:start:increment {
+  height: 25%;
+  display: block;
+  background: transparent;
+
+}
+.item{
+  width: 2000px;
+  height: 1000px;
+  background-color: red;
+}
+    </style>
+    <div class="scroller">
+        <div class="big-thing">
+        </div>
+  </div>
+</body>
+</html>

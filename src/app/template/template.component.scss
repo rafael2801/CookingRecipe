@@ -1,0 +1,23 @@
+.container {
+    background-color: #F5F5F5;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1fr 170px;
+    grid-template-areas: 'header' 'content' 'footer';
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        gap: 0px;
+        grid-template-rows: 175px 1fr 300px;
+        padding: 0 0 70px 0;
+    }
+}

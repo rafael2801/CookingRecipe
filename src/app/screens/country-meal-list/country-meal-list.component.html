@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="selectedCountry">
+        <img [src]="'countries/' + selectedMeal?.country + '.png'" [alt]="selectedMeal?.country">
+        <span (click)="removeFilter()" style="font-size: 16px; color: black;">
+            &#x2715;
+        </span>
+
+    </div>
+    <span>
+        <p>Hi,</p>
+        Search for your meal
+    </span>
+    <div class="customInput">
+        <img src="lupa.png" alt="lupa para pesquisa">
+        <input [(ngModel)]="searchMealSignal" (ngModelChange)="onSearchMealChange($event)" type="text"
+            placeholder="Search for Lunch">
+    </div>
+    <span>or choose</span>
+    @if(mealReducer$ | async; as mealState) {
+    @if (mealState.selected.active) {
+    <div class="meals">
+        @for(item of filteredMeals$ | async; track item) {
+        <div class="grid-item">
+            <app-meal-item [id]="item.idMeal" [photo]="item.strMealThumb" [mealName]="item.strMeal"
+                [isFavorite]="item.isFavorite" />
+        </div>
+        }
+
+    </div>
+    @if(filteredMeals$ | async; as meals) {
+    @if(meals.length > 6) {
+    <div class="hideAndShowMealsContainer">
+        <p class="manrope-default" (click)="toggleMealsVisible()">
+            {{showAllMeals() ? 'Hide meals' : 'see more meals'}}
+        </p>
+        <img [src]="'chooseMeals/' + (showAllMeals() ? 'upArrow.png' : 'downArrow.png') " alt="chevron">
+    </div>
+    }
+    }
+    }
+    }
+</div>

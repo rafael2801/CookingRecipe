@@ -6,7 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { appReducers } from './app.reducers';
 import { provideEffects } from '@ngrx/effects';
-import * as MealsEffects from './models/meal/effects';
+import * as MealsEffects from './meal/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [

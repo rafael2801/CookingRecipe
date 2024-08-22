@@ -1,0 +1,173 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    grid-area: content;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2% 5% 0 5%;
+}
+
+.container p {
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.container span {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container > span > p{
+    opacity: 0.4;
+}
+
+.selectedCountry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.selectedCountry > img {
+    width: 25px;
+    height: 25px;
+}
+
+.selectedCountry > span {
+    cursor: pointer;
+}
+
+.imgContainer {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    background-color: rgba(79, 79, 79, 0.1);
+    align-self: center;
+    position: relative;
+}
+
+.imgContainer > img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.favoriteContainer {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+details {
+    overflow: hidden;
+    margin-top: 10px;
+
+    summary,
+    article {
+        padding: 10px 20px;
+        transition: 0.5s;
+    }
+
+    article > pre {
+        white-space: pre-line;
+    }
+
+
+    article > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    article > ul > li {
+        width: 50%;
+        &::marker {
+            color: #5E5E5E;
+        }
+    }
+
+    summary {
+        cursor: pointer;
+  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        border-top-width: 95%;
+        border-bottom-width: 95%;
+
+        p {
+          font-size: 14px;
+  
+          padding: 0;
+          margin: 0;
+  
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      &[open] {
+        summary {
+          &::after {
+            content: url("../../../../public/icons/chevron-up.svg");
+            margin-top: 5px;
+          }
+        }
+      }
+
+      &:not([open]) {
+        summary {
+          &::after {
+            content: url("../../../../public/icons/chevron-down.svg");
+            margin-top: 5px;
+          }
+        }
+      }
+}
+
+
+@media only screen and (max-width: 768px) { 
+    details {
+        & article {
+            padding: 10px 0;
+        }
+
+        & article > ul {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            padding: 0 30px;
+        }
+
+        & iframe {
+            height: 200px;
+            border-radius: 20px;
+        }
+    }
+
+    .imgContainer {
+        width: 100%;
+        height: 350px;
+    }
+
+    .imgContainer > img {
+        width: 300px;
+        height: 300px;
+    }
+ }

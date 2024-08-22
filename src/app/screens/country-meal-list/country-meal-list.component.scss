@@ -1,0 +1,154 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    grid-area: content;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2% 5% 0 5%;
+}
+
+.container p {
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.container span {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container > span > p{
+    opacity: 0.4;
+}
+
+.customInput {
+    height: 42px;
+    padding: 0 0 0 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.customInput > input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.customInput p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    opacity: 0.4;
+}
+
+.customInput img {
+    width: 18px;
+    height: 15px;
+    opacity: 0.4;
+}
+
+.scroller {
+    height: 150px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.imgsList {
+    gap: 2%;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.imgContainer {
+    width: 144px; 
+    height: 110px; 
+    position: relative;
+  }
+
+  .imgContainer > img {
+    width: 144px;
+    height: 110px;
+    cursor: pointer;
+  }
+
+.imgsList img {
+    display: block;
+    width: 144px;
+    height: 110px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+.meals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.grid-item {
+    flex: 0 1 calc(33.333% - 27px);
+    height: 108px;
+}
+
+.hideAndShowMealsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hideAndShowMealsContainer > p {
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 300;
+    padding: 0;
+}
+
+.hideAndShowMealsContainer > img {
+    width: 15px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.selectedCountry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.selectedCountry > img {
+    width: 34px;
+    height: 26px;
+}
+
+.selectedCountry > span {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-item {
+        flex: 1;
+    }
+    
+}

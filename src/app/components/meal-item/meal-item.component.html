@@ -1,0 +1,9 @@
+<div class="container" (click)="openMealDetail()">
+    <div class="imgContainer">
+        <img [src]="photo" [alt]="mealName">
+    </div>
+    <div class="infoContainer">
+        <span class="manrope-default">{{mealName}}</span>
+        <img (click)="toggleFavoriteMeal($event)" [src]="'mealItem/' + (isFavorite ? 'starColor.png' : 'star.png') " alt="estrela">
+    </div>
+</div>
