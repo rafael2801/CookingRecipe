@@ -21,6 +21,7 @@ import { countries } from '../../constants/countryNames';
 })
 export class MealDetailsComponent implements OnInit {
 
+  private router = inject(Router);
   private route = inject(ActivatedRoute);
   private store = inject(Store<IAppState>);
   private destroy$ = new Subject<void>();
@@ -47,6 +48,7 @@ export class MealDetailsComponent implements OnInit {
     .pipe( takeUntil(this.destroy$) )
     .subscribe(e => {
       this.selectedMeal = e.selected;
+      this.favorites = e.favorites;
       this.isFavorite = !!e.favorites.find(e => e.idMeal === this.id);
     });
 
@@ -82,15 +84,7 @@ export class MealDetailsComponent implements OnInit {
   }
 
   backToHome() {
-    this.store.dispatch(MealsActions.set({
-      selected: {
-        ...this.selectedMeal,
-        country: '',
-        showAll: false,
-        active: false,
-        mealId: ''
-      }
-    }))
+    this.router.navigate(['']);
   }
 
   getIngredients(meal?: MealDetails | null) {

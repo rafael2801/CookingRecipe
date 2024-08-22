@@ -18,7 +18,6 @@
     </div>
     <span>or choose</span>
     @if(mealReducer$ | async; as mealState) {
-    @if (mealState.selected.active) {
     <div class="meals">
         @for(item of filteredMeals$ | async; track item) {
         <div class="grid-item">
@@ -27,12 +26,15 @@
         }
 
     </div>
-    <div class="hideAndShowMealsContainer">
-        <p class="manrope-default" (click)="toggleMealsVisible()">
-            {{showAllMeals() ? 'Hide meals' : 'see more meals'}}
-        </p>
-        <img [src]="'chooseMeals/' + (showAllMeals() ? 'upArrow.png' : 'downArrow.png') " alt="chevron">
-    </div>
-    }
+    @if(filteredMeals$ | async; as meals) {
+        @if(meals.length > 5) {
+        <div class="hideAndShowMealsContainer">
+            <p class="manrope-default" (click)="toggleMealsVisible()">
+                {{showAllMeals() ? 'Hide meals' : 'see more meals'}}
+            </p>
+            <img [src]="'chooseMeals/' + (showAllMeals() ? 'upArrow.png' : 'downArrow.png') " alt="chevron">
+        </div>
+        }
+        }
     }
 </div>

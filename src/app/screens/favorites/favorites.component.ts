@@ -32,7 +32,10 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.mealReducer$
     .pipe( takeUntil(this.destroy$) )
-    .subscribe(e => { this.selectedMeal = e.selected; });
+    .subscribe(e => { 
+      console.log(e)
+      this.selectedMeal = e.selected; 
+    });
   }
 
   ngOnDestroy(): void {

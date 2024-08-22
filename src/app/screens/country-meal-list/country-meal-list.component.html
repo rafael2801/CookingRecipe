@@ -28,7 +28,7 @@
 
     </div>
     @if(filteredMeals$ | async; as meals) {
-    @if(meals.length > 6) {
+    @if(meals.length > 5) {
     <div class="hideAndShowMealsContainer">
         <p class="manrope-default" (click)="toggleMealsVisible()">
             {{showAllMeals() ? 'Hide meals' : 'see more meals'}}
