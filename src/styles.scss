@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 800
+@import "app/scss";
+
+* {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    margin: 0;
+}
+
+.montserrat-default {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+.manrope-default {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.manrope-500 {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
