@@ -8,6 +8,7 @@
 - [Começando](#começando)
   - [Pré-requisitos](#pré-requisitos)
   - [Instalação](#instalação)
+- [Estrutura](#estrutura)
 
 ## 🛠️ Funcionalidades
 
@@ -28,7 +29,6 @@
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/rafael2801/CookingRecipe.git cookingRecipes
-
 2. **Instale as dependências:**
    ```bash
    cd cookingRecipes
@@ -36,22 +36,8 @@
 3. **Inicie o projeto:**
    ```bash
    ng serve
-
 ## Estrutura
     Essa seção descreve a estrutura do projeto como seus principais diretorios e arquivos.
-
-## 📋 Índice
-
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Principais Diretórios e Arquivos](#principais-diretórios-e-arquivos)
-  - [src/](#src)
-    - [app/](#app)
-    - [assets/](#assets)
-    - [environments/](#environments)
-  - [angular.json](#angularjson)
-  - [package.json](#packagejson)
-  - [tsconfig.json](#tsconfigjson)
-- [Scripts no `package.json`](#scripts-no-packagejson)
 
 ## 📁 Estrutura do Projeto
 
