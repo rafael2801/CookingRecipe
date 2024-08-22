@@ -38,6 +38,18 @@
    ng serve
 ## Estrutura
     Essa seção descreve a estrutura do projeto como seus principais diretorios e arquivos.
+- **NgRx:**
+  - Centraliza as informações do estado da aplicação, como comidas favoritas.
+  - Ajuda na organização do código, tornando-o mais limpo e gerenciável.
+
+- **Template:**
+  - O template (header e footer) é fixo, apenas o conteúdo principal muda.
+  - **Vantagem:** evita a necessidade de renderizar novamente o template em cada mudança de página.
+
+- **Angular:**
+  - O projeto poderia ser implementado em HTML, CSS e JS sem Angular.
+  - A escolha pelo Angular oferece facilidades como modularidade, reutilização de componentes e gerenciamento do estado com `NgRx`.
+
 
 ## 📁 Estrutura do Projeto
 
